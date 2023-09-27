@@ -1,16 +1,20 @@
 export class User {
+  // default: Nếu không khai báo thì mặc định access modifier là public
   user_id: number = 1;
 
-  // Chỉ có những class kế thừa (extend) User mới có thể thay đổi giá trị
+  // protected: Chỉ có những class kế thừa (extend) User mới có thể truy cập (bao gồm đọc và thay đổi giá trị)
   protected username: string = "thailq";
 
-  // Có thể thay dổi ở mọi nơi
+  // public: Có thể có thể truy cập (bao gồm đọc và thay đổi giá trị) ở mọi nơi
   public email: string = "thailq@gmail.com";
 
-  // Chỉ có thể thay đổi trong class này (trong các hàm thuộc class này)
+  // private: Chỉ có thể truy cập (bao gồm đọc và thay đổi giá trị) trong class này (trong các hàm thuộc class này)
   private password: string = "pwd123";
 
-  constructor() {}
+  constructor(user_id: number, password: string) {
+    this.user_id = user_id;
+    this.password = password;
+  }
 
   public login(password: string) {
     if (password === this.password) {
@@ -21,10 +25,14 @@ export class User {
     }
   }
 
-  protected sendMessage(msg: string) {
+  protected sendMessage(msg: string): void {
     console.log("Message: ", msg);
     this.hashPassword();
   }
 
   private hashPassword(): void {}
+
+  public set setPassword(password: string) {
+    this.password = password;
+  }
 }

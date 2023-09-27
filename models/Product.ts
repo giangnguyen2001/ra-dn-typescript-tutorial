@@ -1,6 +1,8 @@
 export class Product {
   private product_id: number;
+
   private name: string;
+
   private unit_price: number;
 
   constructor(product_id: number, name: string, unit_price: number) {
