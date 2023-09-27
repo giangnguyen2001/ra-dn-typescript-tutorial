@@ -1,11 +1,5 @@
 import { Payment } from "./Payment";
 
-export abstract class MomoPayment extends Payment {
-  constructor(total: number) {
-    super("Momo", total);
-  }
-
-  override transfer() {
-    console.log("MomoPayment.transfer");
-  }
+export interface MomoPayment extends Payment {
+  phoneNumber: string;
 }
