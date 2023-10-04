@@ -1,6 +1,6 @@
 import { StudentManager } from "./StudentManager";
 import readline from "readline";
-import { Student } from "./Models/Student";
+import { Car } from "./Models/Car";
 
 let readLineInstance = readline.createInterface({
   input: process.stdin,

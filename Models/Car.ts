@@ -1,7 +1,7 @@
-export class Student {
-  private studentId: number;
+export class Car {
+  private brand: string;
 
-  private studentName: string;
+  private price: number;
 
   private sex: boolean;
 
@@ -12,15 +12,15 @@ export class Student {
   private address: string;
 
   constructor(
-    studentId: number,
-    studentName: string,
+    brand: string,
+    price: number,
     sex: boolean,
     className: string,
     age: number,
     address: string
   ) {
-    this.studentId = studentId;
-    this.studentName = studentName;
+    this.brand = brand;
+    this.price = price;
     this.sex = sex;
     this.className = className;
     this.age = age;

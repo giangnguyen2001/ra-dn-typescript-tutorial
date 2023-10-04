@@ -1,4 +1,4 @@
-import { Student } from "./Models/Student";
+import { Student } from "./Models/Car";
 
 export class StudentManager {
   static students: Student[] = [];
