@@ -1,33 +1,56 @@
-import { Order } from "./types/Order";
-import { Person } from "./types/Person";
+import { StudentManager } from "./StudentManager";
+import readline from "readline";
+import { Student } from "./Models/Student";
 
-// Not good
-const sang: { first_name: string; last_name: string; age: number } = {
-  first_name: "Sang",
-  last_name: "Quang",
-  age: 23,
-};
+let readLineInstance = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-const thai: Person = {
-  first_name: "Thai",
-  last_name: "Le Quang",
-  age: 25,
-};
-const son: Person = {
-  first_name: "Son",
-  last_name: "Le Hoang",
-  age: 24,
-};
+function Main() {
+  readLineInstance.question("Vui lòng nhập: ", (action: string) => {
+    switch (action) {
+      case "C":
+        const student: Student = new Student(
+          1,
+          "Jack Sparrow",
+          true,
+          "RA-Parttime",
+          30,
+          "DN"
+        );
+        StudentManager.createStudent(student);
+        Main();
+        break;
+      case "R":
+        StudentManager.showAllStudent();
+        Main();
+        break;
+      case "U":
+        const student1: Student = new Student(
+          2,
+          "James T.Kirk",
+          true,
+          "RA1",
+          29,
+          "DN"
+        );
+        StudentManager.updateStudent(2, student1);
+        Main();
+        break;
+      case "D":
+        StudentManager.deleteStudent(1);
+        Main();
+        break;
+      case "E":
+        readLineInstance.close();
+        break;
+      default:
+        console.log(action);
+        Main();
+        break;
+    }
+  });
+}
 
-const order: Order = {
-  order_id: 1,
-  order_at: new Date(),
-  user_id: 1,
-  note: "",
-  order_details: [],
-};
-
-console.log("sang", sang);
-console.log("thai", thai);
-console.log("son", son);
-console.log("order", order);
+Main();
