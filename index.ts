@@ -1,4 +1,4 @@
-import { StudentManager } from "./StudentManager";
+import { CarManager } from "./CarManager";
 import readline from "readline";
 import { Car } from "./Models/Car";
 
@@ -11,35 +11,35 @@ function Main() {
   readLineInstance.question("Vui lòng nhập: ", (action: string) => {
     switch (action) {
       case "C":
-        const student: Student = new Student(
+        const car: Car = new Car(
           1,
-          "Jack Sparrow",
-          true,
-          "RA-Parttime",
-          30,
-          "DN"
+          "Tesla model 3",
+          "Tesla",
+          142800,
+          "White",
+          "SUV"
         );
-        StudentManager.createStudent(student);
+        CarManager.createCar(car);
         Main();
         break;
       case "R":
-        StudentManager.showAllStudent();
+        CarManager.showAllCar();
         Main();
         break;
       case "U":
-        const student1: Student = new Student(
-          2,
-          "James T.Kirk",
-          true,
-          "RA1",
-          29,
-          "DN"
+        const cars: Car = new Car(
+          1,
+          "Tesla model 4",
+          "Tesla",
+          143000,
+          "Black",
+          "SUV"
         );
-        StudentManager.updateStudent(2, student1);
+        CarManager.updateCar(1, cars);
         Main();
         break;
       case "D":
-        StudentManager.deleteStudent(1);
+        CarManager.deleteCar(1);
         Main();
         break;
       case "E":

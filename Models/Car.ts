@@ -1,87 +1,87 @@
 export class Car {
+   id: number;
+
+  private name: string;
+
   private brand: string;
 
   private price: number;
 
-  private sex: boolean;
+  private color: string;
 
-  private className: string;
-
-  private age: number;
-
-  private address: string;
+  private category: string;
 
   constructor(
+    id: number,
+    name: string,
     brand: string,
     price: number,
-    sex: boolean,
-    className: string,
-    age: number,
-    address: string
+    color: string,
+    category: string
   ) {
+    this.id = id;
+    this.name = name;
     this.brand = brand;
     this.price = price;
-    this.sex = sex;
-    this.className = className;
-    this.age = age;
-    this.address = address;
+    this.color = color;
+    this.category = category;
   }
 
-  public get getStudentId(): number {
-    return this.studentId;
+  public get getId(): number {
+    return this.id;
   }
 
-  public set setStudentId(studentId: number) {
-    this.studentId = studentId;
+  public set setId(id: number) {
+    this.id = id;
   }
 
-  public get getStudentName(): string {
-    return this.studentName;
+  public get getName(): string {
+    return this.name;
   }
 
-  public set setStudentName(studentName: string) {
-    this.studentName = studentName;
+  public set setName(name: string) {
+    this.name = name;
   }
 
-  public get getSex(): boolean {
-    return this.sex;
+  public get getBrand(): string {
+    return this.brand;
   }
 
-  public set setSex(sex: boolean) {
-    this.sex = sex;
+  public set setBrand(brand: string) {
+    this.brand = brand;
   }
 
-  public get getClassName(): string {
-    return this.className;
+  public get getPrice(): number {
+    return this.price;
   }
 
-  public set setClassName(className: string) {
-    this.className = className;
+  public set setPrice(price: number) {
+    this.price = price;
   }
 
-  public get getAge(): number {
-    return this.age;
+  public get getColor(): string {
+    return this.color;
   }
 
-  public set setAge(age: number) {
-    this.age = age;
+  public set setColor(color: string) {
+    this.color = color;
   }
 
-  public get getAddress(): string {
-    return this.address;
+  public get getCategory(): string {
+    return this.category;
   }
 
-  public set setAddress(address: string) {
-    this.address = address;
+  public set setCategory(category: string) {
+    this.category = category;
   }
 
-  public inputData(data: Student): void {
-    this.studentId = data.studentId;
-    this.studentName = data.studentName;
-    this.sex = data.sex;
-    this.className = data.className;
-    this.age = data.age;
-    this.address = data.address;
+  public inputData(data: Car): void {
+    this.id = data.id;
+    this.name = data.name;
+    this.brand = data.brand;
+    this.price = data.price;
+    this.color = data.color;
+    this.category = data.category;
   }
 
   public displayData(): void {
